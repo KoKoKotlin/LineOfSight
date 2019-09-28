@@ -17,6 +17,7 @@ import kotlin.random.Random
 object Canvas : Drawable, Entity {
     var pos = Vector2f(WIDTH / 2.0 + 100, HEIGHT / 2.0 - 200)
 
+    // Liste mit Wänden
     val edges = listOf(
         // walls
         Line(Vector2f(0.0, 0.0), Vector2f(WIDTH.toDouble(), 0.0), true),
@@ -53,6 +54,7 @@ object Canvas : Drawable, Entity {
 
     val verticies = mutableListOf<Vector2f>()
 
+    // Liste mit den Positionen der Spieler
     val targets = Array(10) { _ ->
         Vector2f(Random.nextDouble(WIDTH.toDouble()), Random.nextDouble(HEIGHT.toDouble()))
     }

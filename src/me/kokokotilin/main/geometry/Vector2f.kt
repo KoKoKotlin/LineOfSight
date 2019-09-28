@@ -5,24 +5,30 @@ import kotlin.math.cos
 import kotlin.math.sin
 import kotlin.math.sqrt
 
-
+// Klasse, die einen Vektor im 2 dimensionalen Raum darstellt
 class Vector2f(val x: Double, val y: Double) {
 
+    // gerundete Koordinaten
     val xR: Int = x.toInt()
     val yR: Int = y.toInt()
 
+    // Länge des Vektors
     val mag: Double
         get() = sqrt(x * x + y * y)
+
 
     operator fun plus(v: Vector2f) = Vector2f(x + v.x, y + v.y)
     operator fun minus(v: Vector2f) = Vector2f(x - v.x, y - v.y)
     operator fun times(scalar: Double) = Vector2f(x * scalar, y * scalar)
+    // Skalarprodukt
     operator fun times(v: Vector2f) = x * v.x + y * v.y
     operator fun div(scalar: Double) = Vector2f(x / scalar, y / scalar)
 
+    // Rotiert den Vektor mithilfe der Rotationsmatrix
     infix fun rotate(radians: Double) = Vector2f(x * cos(radians) - y * sin(radians),
         x * sin(radians) + y * cos(radians))
 
+    // berechnet die Entfernund zu einem anderen Vektor
     infix fun dist(v: Vector2f) = (this - v).mag
 
     override fun toString() = "Vector2f<x: $x y: $y>"
