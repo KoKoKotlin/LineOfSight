@@ -7,4 +7,7 @@ Enthalten sind die beiden Funktionen, die den 2 Varianten
 des Algorithmus implementieren und eine Demo, die den
 Algorithmus präsentiert.
 
+Wenn ihr das Projekt selbst benutzen wollt, müsst ihr als Library meine
+PseudoGameLibrary einbinden!
+
 YouTube: https://www.youtube.com/watch?v=Pb6Ow54B5Iw
